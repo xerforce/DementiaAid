@@ -40,6 +40,7 @@ public class HomeActivity extends DashboardActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		System.out.println("Hello world");
 	}
 
 	/**
