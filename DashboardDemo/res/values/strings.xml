@@ -48,7 +48,7 @@
     <string name="feature5_intro">Feature 5 content goes here.</string>
     <string name="feature6_intro">Feature 6 content goes here.</string>
 
-    <string name="about_intro">This app is a demo to show you how to do an Android app based on the Dashboard pattern that has been used in apps like Twitter, Google IO, and Evernote.</string>
+    <string name="about_intro">This activity shows you the detail information about this system.</string>
     <string name="search_intro">Content for the Search page goes here.</string>
     
     <string name="partient_warning">OOO Patient 1F </string>

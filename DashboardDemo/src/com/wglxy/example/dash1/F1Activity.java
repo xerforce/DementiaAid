@@ -17,16 +17,20 @@
 package com.wglxy.example.dash1;
 
 import java.text.SimpleDateFormat;
-import java.util.Date; 
-import java.util.Calendar; 
+import java.util.Date;
+import java.util.Random;
 
-import android.R.integer;
+import com.wglxy.example.dash1.util.MyWarning;
+import com.wglxy.example.dash1.util.WarningSimulation;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.StaticLayout;
+import android.os.Looper;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -46,6 +50,8 @@ import android.widget.Toast;
 public class F1Activity extends DashboardActivity {
 
 	private TabHost myTabHost;
+	private static final String TAG = "ActivityDemo";
+	private MyWarning warning;
 
 	/**
 	 * onCreate
@@ -65,6 +71,8 @@ public class F1Activity extends DashboardActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_f1);
 		setTitleFromActivityLabel(R.id.title_text);
+		
+		warning=new MyWarning(this);
 
 		myTabHost = (TabHost) findViewById(R.id.tabhost);
 		myTabHost.setup();
@@ -77,7 +85,7 @@ public class F1Activity extends DashboardActivity {
 		GridLayout roomGrid = (GridLayout) findViewById(R.id.roomGrid1);
 		int rowNum = 9;
 		int columnNum = 3;
-		addViewToGridlayout(rowNum, columnNum, roomGrid);
+		addViewToGridlayout(rowNum, columnNum, 100, roomGrid);
 		myTabHost.addTab(spec1);
 
 		// tab 2
@@ -94,87 +102,52 @@ public class F1Activity extends DashboardActivity {
 
 	}
 
-	public void addViewToGridlayout(int rowNum, int columnNum,
+	@Override
+	protected void onStart() {
+		super.onStart();
+		WarningSimulation wSimulation=new WarningSimulation(this);
+		new Thread(wSimulation).start();
+	}
+
+	@SuppressLint("NewApi")
+	public void addViewToGridlayout(int rowNum, int columnNum, int floorNum,
 			GridLayout roomGrid) {
-		
+
 		for (int i = 0; i < rowNum; i++) {
 			for (int j = 0; j < columnNum; j++) {
 				Button bn = new Button(this);
-				int roomNum = 100 + i * 3 + j + 1;
+				int roomNum = floorNum + i * 3 + j + 1; // eg: floorNum=100
 				bn.setText(roomNum + "");
-//				bn.setTextSize(30sp);
+				// bn.setTextSize(30sp);
 				bn.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
-	//				TypedValue.COMPLEX_UNIT_PX : Pixels
-	//				TypedValue.COMPLEX_UNIT_SP : Scaled Pixels
-	//				TypedValue.COMPLEX_UNIT_DIP : Device Independent Pixels
+				// TypedValue.COMPLEX_UNIT_PX : Pixels
+				// TypedValue.COMPLEX_UNIT_SP : Scaled Pixels
+				// TypedValue.COMPLEX_UNIT_DIP : Device Independent Pixels
 				GridLayout.Spec rowSpec = GridLayout.spec(i);
 				GridLayout.Spec columnSpec = GridLayout.spec(j);
 				GridLayout.LayoutParams params = new GridLayout.LayoutParams(
 						rowSpec, columnSpec);
 				params.setGravity(Gravity.FILL);
+				
 				bn.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						Date now = new Date(); 
-//						SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//system date time
-						SimpleDateFormat dateFormat = new SimpleDateFormat("dd HH:mm");//
-						String dateTimeString=dateFormat.format(now);
-						giveWarning("Patient OOO.\n1F Room "+((Button)v).getText()+" falled over at "+dateTimeString);
+						Date now = new Date();
+						// SimpleDateFormat dateFormat = new
+						// SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//system date
+						// time
+						SimpleDateFormat dateFormat = new SimpleDateFormat(
+								"dd HH:mm");//
+						String dateTimeString = dateFormat.format(now);
+						String warningContent="Patient OOO.\n1F Room "
+								+ ((Button) v).getText() + " falled over at "
+								+ dateTimeString;
+						warning.giveWarning(warningContent);
 					}
 				});
 				roomGrid.addView(bn, params);
 			}
 		}
 	}
-
-	public void giveWarning(String warningContent) {
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle("Emergency!!!");
-		alertDialogBuilder.setIcon(R.drawable.warning);
-//		alertDialogBuilder.setMessage(R.string.partient_warning);
-		alertDialogBuilder.setMessage(warningContent);
-//		alertDialogBuilder.setPositiveButton(R.string.positive_button,
-//				new DialogInterface.OnClickListener() {
-//
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {
-//						// TODO Auto-generated method stub
-//						Intent positiveActivity = new Intent(
-//								getApplicationContext(), PositiveActivity.class);
-//						startActivity(positiveActivity);
-//					}
-//				});
-//		alertDialogBuilder.setNegativeButton(R.string.negative_button,
-//				new DialogInterface.OnClickListener() {
-//
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {
-//						// TODO Auto-generated method stub
-//						Intent negativeActivity = new Intent(
-//								getApplicationContext(), NegativeActivity.class);
-//						startActivity(negativeActivity);
-//					}
-//				});
-		alertDialogBuilder.setPositiveButton("OK",
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						Toast.makeText(F1Activity.this,"Confirmed", 30000).show();
-					}
-				});
-		alertDialogBuilder.setNegativeButton("Cancel",
-				new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				Toast.makeText(F1Activity.this,"Canceled", 30000).show();
-			}
-		});
-		
-		AlertDialog alertDialog = alertDialogBuilder.create();
-		alertDialog.show();
-	}
-
 } // end class
