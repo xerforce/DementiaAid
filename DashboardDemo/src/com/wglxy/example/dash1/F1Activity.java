@@ -74,7 +74,7 @@ public class F1Activity extends DashboardActivity {
 		
 		warning=new MyWarning(this);
 
-		myTabHost = (TabHost) findViewById(R.id.tabhost);
+		myTabHost = (TabHost) findViewById(R.id.tabhost_floor);
 		myTabHost.setup();
 
 		// adding tabs
@@ -105,8 +105,9 @@ public class F1Activity extends DashboardActivity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		WarningSimulation wSimulation=new WarningSimulation(this);
-		new Thread(wSimulation).start();
+		//simulate reading the falling data from the DB
+//		WarningSimulation wSimulation=new WarningSimulation(this);
+//		new Thread(wSimulation).start();
 	}
 
 	@SuppressLint("NewApi")

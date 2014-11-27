@@ -52,6 +52,15 @@
     <string name="search_intro">Content for the Search page goes here.</string>
     
     <string name="partient_warning">OOO Patient 1F </string>
+    
+    <!-- tab text -->
+    <string name="partient_home">P-Home</string>
+    <string name="partient_sleep">P-Sleep</string>
+    <string name="partient_restroom">P-Restroom</string>
+    <string name="partient_temperature">P-Temperature</string>
+    <string name="partient_location">P-Location</string>
+    
+    
 
 
 </resources>

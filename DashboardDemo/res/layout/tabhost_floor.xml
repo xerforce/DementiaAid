@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TabHost
-        android:id="@+id/tabhost"
+        android:id="@+id/tabhost_floor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 

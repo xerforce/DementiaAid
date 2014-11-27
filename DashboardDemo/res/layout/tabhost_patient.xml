@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<TabHost
+	 	android:id="@+id/tabhost_patient" 
+	 	android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent">
+	    <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent">
+	    <TabWidget android:id="@android:id/tabs"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true">
+		</TabWidget>
+		<FrameLayout android:id="@android:id/tabcontent"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent">
+		    
+		    <RelativeLayout android:id="@+id/tab_patienthome"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical">
+		        <include
+                    android:id="@+id/acivity_f2_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/acivity_f2_home" >
+                </include>
+		    </RelativeLayout>
+		    
+		    <RelativeLayout android:id="@+id/tab_patientSleep"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical">
+		        <include
+                    android:id="@+id/acivity_f2_sleep"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/acivity_f2_sleep" >
+                </include>
+		    </RelativeLayout>
+		    
+		    <RelativeLayout android:id="@+id/tab_patientRestroom"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical">
+		    	<include
+                    android:id="@+id/acivity_f2_restroom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/acivity_f2_restroom" >
+                </include>
+		    </RelativeLayout>
+		    
+		    <RelativeLayout android:id="@+id/tab_roomTemperature"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical">
+		    	<include
+                    android:id="@+id/acivity_f2_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/acivity_f2_temperature" >
+                </include>
+		    </RelativeLayout>
+		    
+		    <RelativeLayout android:id="@+id/tab_patientLocation"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent"
+		    	android:orientation="vertical">
+		    	<include
+                    android:id="@+id/acivity_f2_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    layout="@layout/acivity_f2_location" >
+                </include>
+		    </RelativeLayout>
+		</FrameLayout>
+		</RelativeLayout>
+	</TabHost>
+
+</LinearLayout>
