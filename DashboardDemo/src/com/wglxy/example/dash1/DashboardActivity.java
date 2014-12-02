@@ -17,6 +17,7 @@
 package com.wglxy.example.dash1;
 
 import android.app.Activity;
+import android.app.ActivityGroup;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,8 @@ import android.widget.Toast;
  * 
  */
 
-public abstract class DashboardActivity extends Activity {
+@SuppressWarnings("deprecation")
+public abstract class DashboardActivity extends ActivityGroup {
 
 	/**
 	 * onCreate - called when the activity is first created.

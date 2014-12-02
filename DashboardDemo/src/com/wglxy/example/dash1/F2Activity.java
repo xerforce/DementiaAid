@@ -16,6 +16,7 @@
 
 package com.wglxy.example.dash1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridLayout;
 import android.widget.TabHost;
@@ -51,7 +52,9 @@ public class F2Activity extends DashboardActivity {
 		setTitleFromActivityLabel(R.id.title_text);
 		
 		myTabHost = (TabHost) findViewById(R.id.tabhost_patient);
-		myTabHost.setup();
+//		myTabHost.setup();
+		myTabHost.setup(this.getLocalActivityManager());
+		
 		
 		// adding tabs, have to use this continues way
 		// tab 1
@@ -61,7 +64,8 @@ public class F2Activity extends DashboardActivity {
 		// tab 2
 		myTabHost.addTab(myTabHost.newTabSpec("tab2")
 				.setIndicator(getResources().getString(R.string.partient_sleep))
-				.setContent(R.id.acivity_f2_sleep));
+				.setContent(new Intent().setClass(this, F2Activity_Sleep.class)));
+//				.setContent(R.id.acivity_f2_sleep));
 		// tab 3
 		myTabHost.addTab(myTabHost.newTabSpec("tab3")
 				.setIndicator(getResources().getString(R.string.partient_restroom))
