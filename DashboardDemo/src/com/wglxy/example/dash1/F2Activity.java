@@ -55,8 +55,7 @@ public class F2Activity extends DashboardActivity {
 //		myTabHost.setup();
 		myTabHost.setup(this.getLocalActivityManager());
 		
-		
-		// adding tabs, have to use this continues way
+		// add tabs, have to use this continues way
 		// tab 1
 		myTabHost.addTab(myTabHost.newTabSpec("tab1")
 				.setIndicator(getResources().getString(R.string.partient_home))
@@ -64,12 +63,12 @@ public class F2Activity extends DashboardActivity {
 		// tab 2
 		myTabHost.addTab(myTabHost.newTabSpec("tab2")
 				.setIndicator(getResources().getString(R.string.partient_sleep))
-				.setContent(new Intent().setClass(this, F2Activity_Sleep.class)));
+				.setContent(new Intent().setClass(this, F2ActivitySleep.class)));
 //				.setContent(R.id.acivity_f2_sleep));
 		// tab 3
 		myTabHost.addTab(myTabHost.newTabSpec("tab3")
 				.setIndicator(getResources().getString(R.string.partient_restroom))
-				.setContent(R.id.acivity_f2_restroom));
+				.setContent(new Intent().setClass(this, F2ActivityRestroom.class)));
 		// tab 4
 		myTabHost.addTab(myTabHost.newTabSpec("tab4")
 				.setIndicator(getResources().getString(R.string.partient_temperature))
@@ -78,8 +77,6 @@ public class F2Activity extends DashboardActivity {
 		myTabHost.addTab(myTabHost.newTabSpec("tab5")
 				.setIndicator(getResources().getString(R.string.partient_location))
 				.setContent(R.id.acivity_f2_location));
-		
-		
 	}
 
 } // end class

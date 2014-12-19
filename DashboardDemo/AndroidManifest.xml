@@ -52,9 +52,12 @@
             android:label="@string/title_search"
             android:theme="@style/Theme.D1" />
         <activity
-            android:name=".F2Activity_Sleep"
-            android:label="@string/title_activity_f2_activity__sleep" >
-        </activity>
+            android:name=".F2ActivitySleep"
+            android:label="@string/title_activity_f2_activity__sleep" 
+            android:theme="@style/Theme.D1" />
+        <activity
+            android:name=".F2ActivityRestroom"
+            android:theme="@style/Theme.D1" />
     </application>
 
 </manifest>

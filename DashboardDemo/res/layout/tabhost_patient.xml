@@ -7,20 +7,20 @@
 	<TabHost
 	 	android:id="@+id/tabhost_patient" 
 	 	android:orientation="vertical"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent">
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
 	    <RelativeLayout
-	    	android:layout_width="fill_parent"
-	    	android:layout_height="fill_parent">
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent">
 	    
 		<FrameLayout android:id="@android:id/tabcontent"
-		    android:layout_width="fill_parent"
-		    android:layout_height="fill_parent"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
 		    android:layout_weight="1" >
 		    
 		    <RelativeLayout android:id="@+id/tab_patienthome"
-		    	android:layout_width="fill_parent"
-		    	android:layout_height="fill_parent"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
 		    	android:orientation="vertical">
 		        <include
                     android:id="@+id/acivity_f2_home"
@@ -29,10 +29,10 @@
                     layout="@layout/acivity_f2_home" >
                 </include>
 		    </RelativeLayout>
-		    
+		    <!-- 
 		    <RelativeLayout android:id="@+id/tab_patientSleep"
-		    	android:layout_width="fill_parent"
-		    	android:layout_height="fill_parent"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
 		    	android:orientation="vertical">
 		        <include
                     android:id="@+id/acivity_f2_sleep"
@@ -43,8 +43,8 @@
 		    </RelativeLayout>
 		    
 		    <RelativeLayout android:id="@+id/tab_patientRestroom"
-		    	android:layout_width="fill_parent"
-		    	android:layout_height="fill_parent"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
 		    	android:orientation="vertical">
 		    	<include
                     android:id="@+id/acivity_f2_restroom"
@@ -53,10 +53,10 @@
                     layout="@layout/acivity_f2_restroom" >
                 </include>
 		    </RelativeLayout>
-		    
+		    -->
 		    <RelativeLayout android:id="@+id/tab_roomTemperature"
-		    	android:layout_width="fill_parent"
-		    	android:layout_height="fill_parent"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
 		    	android:orientation="vertical">
 		    	<include
                     android:id="@+id/acivity_f2_temperature"
@@ -67,8 +67,8 @@
 		    </RelativeLayout>
 		    
 		    <RelativeLayout android:id="@+id/tab_patientLocation"
-		    	android:layout_width="fill_parent"
-		    	android:layout_height="fill_parent"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
 		    	android:orientation="vertical">
 		    	<include
                     android:id="@+id/acivity_f2_location"
@@ -79,7 +79,7 @@
 		    </RelativeLayout>
 		</FrameLayout>
 		<TabWidget android:id="@android:id/tabs"
-		    android:layout_width="fill_parent"
+		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_alignParentBottom="true">
 		</TabWidget>

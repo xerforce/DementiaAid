@@ -55,6 +55,14 @@
     <string name="partient_temperature">P-Temperature</string>
     <string name="partient_location">P-Location</string>
     <string name="title_activity_f2_activity__sleep">F2Activity_Sleep</string>
+    
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
+    <string name="this_month">This Month</string>
+    
+    
+    
+    
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 

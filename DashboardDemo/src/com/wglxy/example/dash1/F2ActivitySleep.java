@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ImageView.ScaleType;
 
-public class F2Activity_Sleep extends Activity {
+public class F2ActivitySleep extends Activity {
 	// the key feature for sliding images
 	private ViewPager viewPager;
 	// for lin
@@ -65,7 +65,7 @@ public class F2Activity_Sleep extends Activity {
 
 		tipsImageViews = new ImageView[imagesNum];
 		for (int j = 0; j < imagesNum; j++) {
-			imageView = new ImageView(F2Activity_Sleep.this);
+			imageView = new ImageView(F2ActivitySleep.this);
 			imageView.setLayoutParams(new LayoutParams(20, 20));
 			imageView.setPadding(20, 0, 20, 0);
 			tipsImageViews[j] = imageView;

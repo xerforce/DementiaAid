@@ -24,4 +24,7 @@
     <color name="background2">#ffd5ddeb</color>
     <color name="background3">#ffe3e8f1</color>
     <color name="title_separator">#40ffffff</color>
+    
+    <color name="tab_selected_bg">#C4E1E1</color>
+    
 </resources>
