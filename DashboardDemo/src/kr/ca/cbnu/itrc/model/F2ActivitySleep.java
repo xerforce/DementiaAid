@@ -1,4 +1,4 @@
-package com.wglxy.example.dash1;
+package kr.ca.cbnu.itrc.model;
 
 import java.util.ArrayList;
 

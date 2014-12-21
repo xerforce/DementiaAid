@@ -89,7 +89,7 @@ public class ProjectStatusBubbleChart extends AbstractDemoChart {
 		renderer.setXLabels(7);
 		renderer.setYLabels(0);
 		renderer.setShowGrid(false);
-		return ChartFactory.getBubbleChartIntent(context, series, renderer,
+		return ChartFactory.getBubbleChartIntent(context, series, renderer,//series are dataset
 				"Project tickets");
 	}
 

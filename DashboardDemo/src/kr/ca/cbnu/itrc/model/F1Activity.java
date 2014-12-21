@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.wglxy.example.dash1;
+package kr.ca.cbnu.itrc.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-import com.wglxy.example.dash1.util.MyWarning;
-import com.wglxy.example.dash1.util.WarningSimulation;
+import kr.ca.cbnu.itrc.model.util.MyWarning;
+import kr.ca.cbnu.itrc.model.util.WarningSimulation;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

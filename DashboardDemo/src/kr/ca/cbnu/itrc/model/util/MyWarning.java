@@ -1,8 +1,10 @@
 /**
  * 
  */
-package com.wglxy.example.dash1.util;
+package kr.ca.cbnu.itrc.model.util;
 
+import kr.ca.cbnu.itrc.model.F1Activity;
+import kr.ca.cbnu.itrc.model.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application.ActivityLifecycleCallbacks;
@@ -11,9 +13,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-
-import com.wglxy.example.dash1.F1Activity;
-import com.wglxy.example.dash1.R;
 
 /**
  * @author Jerry

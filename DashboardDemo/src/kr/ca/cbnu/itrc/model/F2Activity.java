@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wglxy.example.dash1;
+package kr.ca.cbnu.itrc.model;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -72,7 +72,7 @@ public class F2Activity extends DashboardActivity {
 		// tab 4
 		myTabHost.addTab(myTabHost.newTabSpec("tab4")
 				.setIndicator(getResources().getString(R.string.partient_temperature))
-				.setContent(R.id.acivity_f2_temperature));
+				.setContent(new Intent().setClass(this, F2RmTemperatureActivity.class)));
 		// tab 5
 		myTabHost.addTab(myTabHost.newTabSpec("tab5")
 				.setIndicator(getResources().getString(R.string.partient_location))

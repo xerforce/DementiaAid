@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wglxy.example.dash1;
+package kr.ca.cbnu.itrc.model;
 
 import android.os.Bundle;
 

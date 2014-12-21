@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.wglxy.example.dash1;
+package kr.ca.cbnu.itrc.model;
 
 import android.os.Bundle;
 
 /**
- * This is the About activity in the dashboard application.
+ * This is the activity for feature 5 in the dashboard application.
  * It displays some text and provides a way to get back to the home activity.
  *
  */
 
-public class AboutActivity extends DashboardActivity 
+public class F5Activity extends DashboardActivity 
 {
 
 /**
@@ -42,8 +42,7 @@ public class AboutActivity extends DashboardActivity
 protected void onCreate(Bundle savedInstanceState) 
 {
     super.onCreate(savedInstanceState);
-
-    setContentView (R.layout.activity_about);
+    setContentView (R.layout.activity_f5);
     setTitleFromActivityLabel (R.id.title_text);
 }
     

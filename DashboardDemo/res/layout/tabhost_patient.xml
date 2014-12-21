@@ -53,7 +53,7 @@
                     layout="@layout/acivity_f2_restroom" >
                 </include>
 		    </RelativeLayout>
-		    -->
+		    
 		    <RelativeLayout android:id="@+id/tab_roomTemperature"
 		    	android:layout_width="match_parent"
 		    	android:layout_height="match_parent"
@@ -65,7 +65,7 @@
                     layout="@layout/acivity_f2_temperature" >
                 </include>
 		    </RelativeLayout>
-		    
+		    -->
 		    <RelativeLayout android:id="@+id/tab_patientLocation"
 		    	android:layout_width="match_parent"
 		    	android:layout_height="match_parent"

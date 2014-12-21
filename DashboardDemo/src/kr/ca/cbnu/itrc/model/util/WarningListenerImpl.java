@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.wglxy.example.dash1.util;
+package kr.ca.cbnu.itrc.model.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
