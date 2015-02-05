@@ -249,7 +249,7 @@ class LoadData extends AsyncTask<String, String, String> {
 		mLegend.setXEntrySpace(5f); //set the space between the legend entries on the x-axis
 		mLegend.setYEntrySpace(5f); //set the space between the legend entries on the y-axis
 				
-				
+		
 		//Styling Labels
 		mChart.setDrawXLabels(true);
 		mChart.setDrawYLabels(true);

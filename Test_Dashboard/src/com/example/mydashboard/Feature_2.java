@@ -90,37 +90,37 @@ public class Feature_2 extends TabActivity{
 		
 		TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 		
-//		TabSpec tab1 = tabHost.newTabSpec("tab1");
+		TabSpec tab1 = tabHost.newTabSpec("tab1");
 		TabSpec tab2 = tabHost.newTabSpec("tab2");
 		TabSpec tab3 = tabHost.newTabSpec("tab3");
 		TabSpec tab4 = tabHost.newTabSpec("tab4");
 		TabSpec tab5 = tabHost.newTabSpec("tab5");
 
-//		tab1.setIndicator(labels[0]);			
+		tab1.setIndicator(labels[0]);			
 		tab2.setIndicator(labels[1]);
 		tab3.setIndicator(labels[2]);
 		tab4.setIndicator(labels[3]);
 		tab5.setIndicator(labels[4]);
 		
-//		Intent i1 = new Intent(this, Feature_2_Tab_1.class);
+		Intent i1 = new Intent(this, Feature_2_Tab_1.class);
 		Intent i2 = new Intent(this, Feature_2_Tab_2.class);
 		Intent i3 = new Intent(this, Feature_2_Tab_3.class);
 		Intent i4 = new Intent(this, Feature_2_Tab_4.class);
 		Intent i5 = new Intent(this, Feature_2_Tab_5.class);
 		
-//		i1.putExtra(Define.TAG_ID, pid);
+		i1.putExtra(Define.TAG_ID, pid);
 		i2.putExtra(Define.TAG_ID, pid);
 		i3.putExtra(Define.TAG_ID, pid);
 		i4.putExtra(Define.TAG_ID, pid);
 		i5.putExtra(Define.TAG_ID, pid);
         
-//		tab1.setContent(i1);
+		tab1.setContent(i1);
 		tab2.setContent(i2);
 		tab3.setContent(i3);
 		tab4.setContent(i4);
 		tab5.setContent(i5);
 		
-//		tabHost.addTab(tab1);
+		tabHost.addTab(tab1);
 		tabHost.addTab(tab2);
 		tabHost.addTab(tab3);
 		tabHost.addTab(tab4);

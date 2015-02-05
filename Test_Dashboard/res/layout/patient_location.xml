@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="60dp"
+        android:layout_weight="1" >
+
+        <TextView android:id="@+id/lastestLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/lastestLocation"/>        
+        <TextView android:id="@+id/lblRoomNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@id/lastestLocation"/>        
+    </RelativeLayout>
+
+    <View
+         android:layout_width="fill_parent"
+         android:layout_height="2dp"
+         android:background="@android:color/holo_blue_light"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1" 
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/detectedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/detectedTime" />        
+        <TextView android:id="@+id/lblDetectedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>        
+    </LinearLayout>
+    
+    <View
+         android:layout_width="fill_parent"
+         android:layout_height="2dp"
+         android:background="@android:color/holo_blue_light"/>
+        
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1" 
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/currentTime" />        
+        <TextView android:id="@+id/lblCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>        
+    </LinearLayout>
+
+</LinearLayout>

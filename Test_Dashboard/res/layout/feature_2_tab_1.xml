@@ -2,58 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="40dp"
-    android:paddingRight="40dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="60dp"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/home_btn_feature1"
+            android:id="@+id/btnPSleep"
+            android:minWidth="130dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             
-			style="?android:attr/buttonBarButtonStyle"
-            android:text="수면상태" />
+            android:onClick="doClick"
+            android:background="@android:color/holo_blue_light"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/partient_sleep" />
 
         <Button
-            android:id="@+id/home_btn_feature2"
+            android:id="@+id/btnPRestroom"
+            android:minWidth="130dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="화장실이용패턴" />
+            android:onClick="doClick"
+            android:background="@android:color/holo_blue_light"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/partient_restroom" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/home_btn_feature3"
+            android:id="@+id/btnPTemperature"
+            android:minWidth="130dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="병실온도" />
+            android:onClick="doClick"
+            android:background="@android:color/holo_blue_light"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/partient_temperature" />
 
         <Button
-            android:id="@+id/home_btn_feature4"
+            android:id="@+id/btnPLocation"
+            android:minWidth="130dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             
-            style="?android:attr/buttonBarButtonStyle"
-            android:text="환자위치" />
+            android:onClick="doClick"
+            android:background="@android:color/holo_blue_light"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/partient_location" />
     </RelativeLayout>
-
+<!-- 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,4 +92,5 @@
             style="?android:attr/buttonBarButtonStyle"
             android:text="이잘종계" />
     </RelativeLayout>
+     -->
 </LinearLayout>

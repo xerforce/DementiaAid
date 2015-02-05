@@ -34,11 +34,11 @@
    
 
     <!-- Patients -->
-    <string name="partient_home">P-Home</string>
-    <string name="partient_sleep">P-Sleep</string>
-    <string name="partient_restroom">P-Restroom</string>
-    <string name="partient_temperature">P-Temperature</string>
-    <string name="partient_location">P-Location</string>
+    <string name="partient_home">Home</string>
+    <string name="partient_sleep">Sleep</string>
+    <string name="partient_restroom">Restroom</string>
+    <string name="partient_temperature">Temperature</string>
+    <string name="partient_location">Location</string>
     
     <string name="view_patient_list">View Patient List</string>
     
@@ -78,5 +78,11 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
 
+    
+    <!-- Location -->
+    <string name="lastestLocation">Lastest Location</string>
+    <string name="detectedTime">Detected Time</string>
+    <string name="currentTime">Current Time</string>
+    <string name="roomNumber">Room Number</string>
     
 </resources>
