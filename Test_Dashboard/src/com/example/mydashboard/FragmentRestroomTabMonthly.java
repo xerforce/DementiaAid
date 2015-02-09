@@ -69,15 +69,21 @@ public class FragmentRestroomTabMonthly extends Fragment {
 		XYMultipleSeriesRenderer renderer = ChartHelper.buildBarRenderer(colors);
 		renderer.setOrientation(Orientation.VERTICAL);
 		ChartHelper.setChartSettings(renderer, "Monthly sales in the last 2 years",
-				"Month", "Units sold", 0.5, 12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
+				"Day", "Duration", 0.5, 12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
 		renderer.setXLabels(1);
 		renderer.setYLabels(10);
-		renderer.addXTextLabel(1, "Jan");
-		renderer.addXTextLabel(3, "Mar");
-		renderer.addXTextLabel(5, "May");
-		renderer.addXTextLabel(7, "Jul");
-		renderer.addXTextLabel(10, "Oct");
-		renderer.addXTextLabel(12, "Dec");
+		renderer.addXTextLabel(1, "1");
+		renderer.addXTextLabel(2, "2");
+		renderer.addXTextLabel(3, "3");
+		renderer.addXTextLabel(4, "4");
+		renderer.addXTextLabel(5, "5");
+		renderer.addXTextLabel(5, "6");
+		renderer.addXTextLabel(7, "7");
+		renderer.addXTextLabel(8, "8");
+		renderer.addXTextLabel(9, "9");
+		renderer.addXTextLabel(10, "10");
+		renderer.addXTextLabel(11, "11");
+		renderer.addXTextLabel(12, "12");
 		int length = renderer.getSeriesRendererCount();
 		for (int i = 0; i < length; i++) {
 			SimpleSeriesRenderer seriesRenderer = renderer
