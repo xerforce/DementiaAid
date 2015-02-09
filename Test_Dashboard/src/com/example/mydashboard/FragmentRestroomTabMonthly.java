@@ -68,7 +68,7 @@ public class FragmentRestroomTabMonthly extends Fragment {
 		int[] colors = new int[] { Color.CYAN, Color.BLUE };
 		XYMultipleSeriesRenderer renderer = ChartHelper.buildBarRenderer(colors);
 		renderer.setOrientation(Orientation.VERTICAL);
-		ChartHelper.setChartSettings(renderer, "Monthly sales in the last 2 years",
+		ChartHelper.setChartSettings(renderer, "",
 				"Day", "Duration", 0.5, 12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
 		renderer.setXLabels(1);
 		renderer.setYLabels(10);
