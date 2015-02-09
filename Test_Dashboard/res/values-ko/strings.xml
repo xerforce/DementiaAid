@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hospital</string>
+    <string name="action_settings">환경</string>
+    
+    <string name="description_feature1">기능 1</string>
+    <string name="description_feature2">기능 2</string>
+    <string name="description_feature3">기능 3</string>
+    <string name="description_feature4">기능 4</string>
+    <string name="description_feature5">기능 5</string>
+    <string name="description_feature6">기능 6</string>
+    
+    <string name="title_feature1">기능 1</string>
+    <string name="title_feature2">기능 2</string>
+    <string name="title_feature3">기능 3</string>
+    <string name="title_feature4">기능 4</string>
+    <string name="title_feature5">기능 5</string>
+    <string name="title_feature6">기능 6</string>
+
+    <!-- Patients -->
+    <string name="patient_home">홈</string>
+    <string name="patient_sleep">수면</string>
+    <string name="patient_restroom">화장실</string>
+    <string name="patient_temperature">병실온도</string>
+    <string name="patient_location">환자위치</string>
+    <string name="patient_falling_statistics">낙상통계</string>
+    <string name="patient_deviation_statistics">이탈통계</string>
+    <string name="patient_fell_down_at">낙상</string>
+    
+    <string name="view_patient_list">담당 환자 보기</string>
+    
+    <string name="room">방호</string>
+    <string name="accumulated_time">누적 시간</string>
+          
+    <string name="today">오닐</string>
+    <string name="this_week">일주일</string>
+    <string name="this_month">한달</string>
+          
+    <!-- error -->
+    <string name="server_might_be_down">Server might be down.</string>
+    <string name="check_internet_connection">Please check your Internet connection</string>
+    <string name="connection_timeout_exception">Connection Time Out!</string>
+    <string name="socket_timeout_exception">Data Retrieving Time Out!</string>
+    <string name="connection_exception">Cannot connect to server!</string>
+    
+    <!-- Retry -->
+    <string name="tap_to_retry">Tap to retry...</string>
+    
+    <!-- Building Floor -->
+    <string name="floor_1">1 층</string>
+    <string name="floor_2">2 층</string>
+    <string name="floor_3">3 층</string>
+    <string name="view_all_floors">전체 병실 보기</string>    
+    
+    <!-- Search -->
+    <string name="search_label">찾기</string>
+    <string name="search_hint">환자명이나 나이를 입력하세요</string>
+    
+    <!-- Login -->
+    <string name="login">로그인</string>
+    <string name="cancel">취소</string>
+    <string name="close">닫기</string>
+    <string name="username">사용자 이름</string>
+    <string name="password">암호</string>
+
+    
+    <!-- Location -->
+    <string name="lastestLocation">현재 환자 의차</string>
+    <string name="detectedTime">마지막 의치 감지 시간</string>
+    <string name="currentTime">현재 사간</string>
+    
+</resources>

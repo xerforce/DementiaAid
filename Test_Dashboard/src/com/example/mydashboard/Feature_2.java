@@ -79,11 +79,11 @@ public class Feature_2 extends TabActivity{
 	*/
 	
 	private void setupTab(String pid){
-		String[] labels = {getString(R.string.partient_home),
-				getString(R.string.partient_sleep),
-				getString(R.string.partient_restroom),
-				getString(R.string.partient_temperature),
-				getString(R.string.partient_location),};		
+		String[] labels = {getString(R.string.patient_home),
+				getString(R.string.patient_sleep),
+				getString(R.string.patient_restroom),
+				getString(R.string.patient_temperature),
+				getString(R.string.patient_location),};		
 		
 		//Tab
 		//MySectionGenerator.setupTabs(actionBar, labels, tl);

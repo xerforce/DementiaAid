@@ -75,8 +75,9 @@ public class Feature_1_Tab_1 extends Activity{
 				@Override
 				public void run() {
 					Log.i("runnable", "running");
-					String msg = "Patient in room " + buttons[1][1].getText().toString() +
-							" fell down at " + new SimpleDateFormat("HH:mm:ss").format(new Date());
+					String msg = getString(R.string.room) + " " + buttons[1][1].getText().toString() + 
+						 " - " + getString(R.string.patient_fell_down_at) + " " + new SimpleDateFormat("HH:mm:ss").format(new Date());
+					
 					alert(buttons[1][1], msg);
 				}
 			}, 4000);
