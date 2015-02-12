@@ -6,7 +6,8 @@ import java.util.HashMap;
 public class Define {
 	
 	//URL node names
-	public final static String SERVER_NAME = "http://210.115.187.254/ITRC_DB";
+//	public final static String SERVER_NAME = "http://210.115.187.254/ITRC_DB";
+	public final static String SERVER_NAME = "http://210.115.182.145/php_projects/ITRC_DB";
 	
 	public final static String  URL_GET_MONITORING_DAILY_OF_A_PATIENT = SERVER_NAME + "/get_monitoring_daily_of_a_patient.php";
 	public final static String  URL_GET_FROM_QUERY = SERVER_NAME + "/get_from_query.php";
@@ -34,6 +35,7 @@ public class Define {
 	public static final String TAG_PLACE_FREQUENCY = "place_frequency";
 	public static final String TAG_DURATION = "duration";
 	
+	public static final String TAG_DATE_WEEKDAY = "date_weekday";
 	
 	//Fragment
 	public static final String TAG_RETRY_FRAGMENT = "retry_fragment";
