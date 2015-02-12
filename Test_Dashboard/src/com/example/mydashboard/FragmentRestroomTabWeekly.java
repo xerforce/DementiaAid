@@ -76,61 +76,61 @@ public class FragmentRestroomTabWeekly extends Fragment {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-//		if (!isLoad) {
-//			Log.i("onResume", "NOT loaded.");
-//			String pid = getActivity().getIntent().getStringExtra(Define.TAG_ID);
-//			Log.d("pid is ", pid);
-//
-//			DataLoader dataLoader=new DataLoader(getActivity(), getFragmentManager());
-//			dataLoader.execute(
-//				"sql_string", // param1 name 
-//				"select patient_id, location_id, substring(date_id,1,8) date_weekday, place_frequency, duration " // param1 value
-//				+ "from monitoring_daily_r1 "
-//				+ "where patient_id = 1 and location_id = 2 and date_id between 2011010100 and 2011010799", 
-//				
-//				"params_string", // param2 name
-//				Define.TAG_PATIENT_ID + ","  // param2 value
-//				+ Define.TAG_LOCATION_ID + ","
-//				+ Define.TAG_DATE_WEEKDAY + ","
-//				+ Define.TAG_PLACE_FREQUENCY + ","
-//				+ Define.TAG_DURATION
-//			);
-//			JSONObject json=null;
-//			try {
-//				json=dataLoader.getJson();
-//			} catch (Exception e) {
-//				// TODO: handle exception
-//				e.printStackTrace();
-//			}
-//			if(json!=null){
-//				JSONArray dataArray;
-//				list=new ArrayList<Monitoring_Weekly>();
-//				try {
-//					dataArray = json.getJSONArray(Define.TAG_OBJECT_ARRAY);
-//					// looping through All Products
-//					for (int i = 0; i < dataArray.length(); i++) {
-//						JSONObject c = dataArray.getJSONObject(i);
-//
-//						// Storing each json item in variable
-//						int patient_id = c.getInt(Define.TAG_PATIENT_ID);
-//						int location_id = c.getInt(Define.TAG_LOCATION_ID);
-//						int date_weekday=c.getInt(Define.TAG_DATE_WEEKDAY);
-//						int place_frequency=c.getInt(Define.TAG_PLACE_FREQUENCY);
-//						int duration = c.getInt(Define.TAG_DURATION);
-//
-//						Monitoring_Weekly obj = new Monitoring_Weekly(patient_id, location_id,date_weekday,place_frequency, duration);
-//						list.add(obj);
-//					}
-//					// change isLoad flag to true prevents when parent tab (activity) changed
-//					isLoad = true;
-//					
-//				} catch (JSONException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				} // JSON Array
-//			}
-//		}
-		drawGraph();
+		if (!isLoad) {
+			Log.i("onResume", "NOT loaded.");
+			String pid = getActivity().getIntent().getStringExtra(Define.TAG_ID);
+			Log.d("pid is ", pid);
+
+			DataLoader dataLoader=new DataLoader(getActivity(), getFragmentManager());
+			dataLoader.execute(
+				"sql_string", // param1 name 
+				"select patient_id, location_id, substring(date_id,1,8) date_weekday, place_frequency, duration " // param1 value
+				+ "from monitoring_daily_r1 "
+				+ "where patient_id = 1 and location_id = 2 and date_id between 2011010100 and 2011010799", 
+				
+				"params_string", // param2 name
+				Define.TAG_PATIENT_ID + ","  // param2 value
+				+ Define.TAG_LOCATION_ID + ","
+				+ Define.TAG_DATE_WEEKDAY + ","
+				+ Define.TAG_PLACE_FREQUENCY + ","
+				+ Define.TAG_DURATION
+			);
+			JSONObject json=null;
+			try {
+				json=dataLoader.getJson();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			if(json!=null){
+				JSONArray dataArray;
+				list=new ArrayList<Monitoring_Weekly>();
+				try {
+					dataArray = json.getJSONArray(Define.TAG_OBJECT_ARRAY);
+					// looping through All Products
+					for (int i = 0; i < dataArray.length(); i++) {
+						JSONObject c = dataArray.getJSONObject(i);
+
+						// Storing each json item in variable
+						int patient_id = c.getInt(Define.TAG_PATIENT_ID);
+						int location_id = c.getInt(Define.TAG_LOCATION_ID);
+						int date_weekday=c.getInt(Define.TAG_DATE_WEEKDAY);
+						int place_frequency=c.getInt(Define.TAG_PLACE_FREQUENCY);
+						int duration = c.getInt(Define.TAG_DURATION);
+
+						Monitoring_Weekly obj = new Monitoring_Weekly(patient_id, location_id,date_weekday,place_frequency, duration);
+						list.add(obj);
+					}
+					// change isLoad flag to true prevents when parent tab (activity) changed
+					isLoad = true;
+					drawGraph();
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} // JSON Array
+			}
+		}
+		
 	}
 	
 	private void drawGraph(){
