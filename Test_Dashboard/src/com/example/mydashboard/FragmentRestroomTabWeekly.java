@@ -103,7 +103,7 @@ public class FragmentRestroomTabWeekly extends Fragment {
 				e.printStackTrace();
 			}
 			if(json!=null){
-				JSONArray dataArray;
+				JSONArray dataArray;// JSON Array
 				list=new ArrayList<Monitoring_Weekly>();
 				try {
 					dataArray = json.getJSONArray(Define.TAG_OBJECT_ARRAY);
@@ -127,7 +127,7 @@ public class FragmentRestroomTabWeekly extends Fragment {
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				} // JSON Array
+				} 
 			}
 		}
 		
