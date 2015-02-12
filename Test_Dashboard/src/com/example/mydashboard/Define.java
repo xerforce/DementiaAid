@@ -11,8 +11,6 @@ public class Define {
 	
 	public final static String  URL_GET_MONITORING_DAILY_OF_A_PATIENT = SERVER_NAME + "/get_monitoring_daily_of_a_patient.php";
 	public final static String  URL_GET_FROM_QUERY = SERVER_NAME + "/get_from_query.php";
-
-	
 	
 	//JSON node names
 	public static final String TAG_SUCCESS = "success";	
