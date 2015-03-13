@@ -1,25 +1,25 @@
 package com.example.models;
 
-public class Monitoring_Weekly {
+public class Monitoring_Monthly {
 
 	private int idx;
 	private int patient_id;
 	private int location_id;
-	private int date_weekday;
+	private int date_month;
 	private int place_frequency;
 	private int duration;
 	
-	public Monitoring_Weekly(){
+	public Monitoring_Monthly(){
 		this(0, 0, 0, 0, 0);
 	}
 	
-	public Monitoring_Weekly(int patient_id, int location_id,
-			int date_weekday, int place_frequency, int duration) {
+	public Monitoring_Monthly(int patient_id, int location_id,
+			int date_month, int place_frequency, int duration) {
 		super();
-//		this.idx = idx;
+		this.idx = idx;
 		this.patient_id = patient_id;
 		this.location_id = location_id;
-		this.date_weekday = date_weekday;
+		this.date_month = date_month;
 		this.place_frequency = place_frequency;
 		this.duration = duration;
 	}
@@ -42,11 +42,11 @@ public class Monitoring_Weekly {
 	public void setLocation_id(int location_id) {
 		this.location_id = location_id;
 	}
-	public int getDate_weekday() {
-		return date_weekday;
+	public int getDate_month() {
+		return date_month;
 	}
-	public void setDate_weekday(int date_weekday) {
-		this.date_weekday = date_weekday;
+	public void setDate_month(int date_month) {
+		this.date_month = date_month;
 	}
 	public int getPlace_frequency() {
 		return place_frequency;

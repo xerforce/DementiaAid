@@ -35,6 +35,8 @@ public class Define {
 	
 	public static final String TAG_DATE_WEEKDAY = "date_weekday";
 	
+	public static final String TAG_DATE_MONTH = "date_month";
+	
 	//Fragment
 	public static final String TAG_RETRY_FRAGMENT = "retry_fragment";
 	public static final String TAG_TODAY = "today";

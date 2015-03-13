@@ -194,6 +194,7 @@ public class FragmentRestroomTabWeekly extends Fragment implements IDrawGraph{
 		for(int i=0;i<weeklyDataListSize;i++){
 			durationSeries.add(i+1, weeklyDataList.get(i).getDuration());
 		}
+//		
 		renderer.setBarSpacing(0.5);
 		
 		XYSeriesRenderer waterRenderer = new XYSeriesRenderer();

@@ -84,7 +84,7 @@ public class DataLoader extends AsyncTask<String, String, String> {
 			}
 
 			// getting product details by making HTTP request
-			// Note that product details url will use GET request
+			// Note that results detail url will use GET request
 			jsonQuaryResult = JSONParser.makeHttpRequest(
 					Define.URL_GET_FROM_QUERY, "GET", params);
 
