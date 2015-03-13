@@ -5,6 +5,9 @@ package com.example.mydashboard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
@@ -28,6 +31,7 @@ import com.example.models.Monitoring_Daily;
 import com.example.models.Monitoring_Weekly;
 import com.example.mydashboard.FragmentRestroomTabToday.LoadData;
 
+import android.R.integer;
 import android.app.Activity;
 import android.graphics.*;
 import android.graphics.Paint.Align;
@@ -46,12 +50,14 @@ import android.widget.LinearLayout;
  * @author Jerry
  *
  */
-public class FragmentRestroomTabWeekly extends Fragment {
+public class FragmentRestroomTabWeekly extends Fragment implements IDrawGraph{
 
 	private boolean isLoad;
 	private GraphicalView mChartView;
-	ArrayList<Monitoring_Weekly> list;
-		
+	ArrayList<Monitoring_Weekly> weeklyDataList;
+	private static ExecutorService exec = Executors.newSingleThreadExecutor();
+	private String pid;
+	
 	@Override
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
@@ -78,11 +84,11 @@ public class FragmentRestroomTabWeekly extends Fragment {
 		super.onResume();
 		if (!isLoad) {
 			Log.i("onResume", "NOT loaded.");
-			String pid = getActivity().getIntent().getStringExtra(Define.TAG_ID);
+			pid = getActivity().getIntent().getStringExtra(Define.TAG_ID);
 			Log.d("pid is ", pid);
 
-			DataLoader dataLoader=new DataLoader(getActivity(), getFragmentManager());
-			dataLoader.execute(
+			DataLoader dataLoader=new DataLoader(getActivity(), getFragmentManager(), this);  //use call back function
+			dataLoader.executeOnExecutor(exec,
 				"sql_string", // param1 name 
 				"select patient_id, location_id, substring(date_id,1,8) date_weekday, place_frequency, duration " // param1 value
 				+ "from monitoring_daily_r1 "
@@ -95,47 +101,43 @@ public class FragmentRestroomTabWeekly extends Fragment {
 				+ Define.TAG_PLACE_FREQUENCY + ","
 				+ Define.TAG_DURATION
 			);
-			JSONObject json=null;
-			try {
-				json=dataLoader.getJson();
-			} catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}
-			if(json!=null){
-				JSONArray dataArray;// JSON Array
-				list=new ArrayList<Monitoring_Weekly>();
-				try {
-					dataArray = json.getJSONArray(Define.TAG_OBJECT_ARRAY);
-					// looping through All Products
-					for (int i = 0; i < dataArray.length(); i++) {
-						JSONObject c = dataArray.getJSONObject(i);
-
-						// Storing each json item in variable
-						int patient_id = c.getInt(Define.TAG_PATIENT_ID);
-						int location_id = c.getInt(Define.TAG_LOCATION_ID);
-						int date_weekday=c.getInt(Define.TAG_DATE_WEEKDAY);
-						int place_frequency=c.getInt(Define.TAG_PLACE_FREQUENCY);
-						int duration = c.getInt(Define.TAG_DURATION);
-
-						Monitoring_Weekly obj = new Monitoring_Weekly(patient_id, location_id,date_weekday,place_frequency, duration);
-						list.add(obj);
-					}
-					// change isLoad flag to true prevents when parent tab (activity) changed
-					isLoad = true;
-					drawGraph();
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} 
-			}
+			
 		}
-		
 	}
 	
-	private void drawGraph(){
+	@Override
+	public void drawGraph(JSONObject json){
+		if(json!=null){
+			JSONArray dataArray;// JSON Array
+			weeklyDataList=new ArrayList<Monitoring_Weekly>();
+			try {
+				dataArray = json.getJSONArray(Define.TAG_OBJECT_ARRAY);
+				// looping through All
+				for (int i = 0; i < dataArray.length(); i++) {
+					JSONObject c = dataArray.getJSONObject(i);
+
+					// Storing each json item in variable
+					int patient_id = c.getInt(Define.TAG_PATIENT_ID);
+					int location_id = c.getInt(Define.TAG_LOCATION_ID);
+					int date_weekday=c.getInt(Define.TAG_DATE_WEEKDAY);
+					int place_frequency=c.getInt(Define.TAG_PLACE_FREQUENCY);
+					int duration = c.getInt(Define.TAG_DURATION);
+
+					Monitoring_Weekly obj = new Monitoring_Weekly(patient_id, location_id,date_weekday,place_frequency, duration);
+					weeklyDataList.add(obj);
+				}
+				// change isLoad flag to true prevents when parent tab (activity) changed
+				isLoad = true;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		}else {
+			Log.d("json", pid);
+			return;
+		}
 		
-		String[] titles = new String[] { "times"};
+		String[] titles = new String[] { "Times"};
 //		int size=list.size();
 		
 		//x axis
@@ -147,10 +149,16 @@ public class FragmentRestroomTabWeekly extends Fragment {
 //		}
 //		x.add(weekdays);
 		
+		int weeklyDataListSize=weeklyDataList.size();
 		
 		//values of lines
 		List<double[]> values = new ArrayList<double[]>();
-		values.add(new double[] { 2, 3, 3, 2, 4, 3, 6});
+		
+		double[] frequency=new double[7];
+		for(int i=0;i<weeklyDataListSize;i++){
+			frequency[i]=weeklyDataList.get(i).getPlace_frequency();
+		}
+		values.add(frequency);
 		
 		// colors of lines
 		int[] colors = new int[] { Color.GREEN};
@@ -182,14 +190,10 @@ public class FragmentRestroomTabWeekly extends Fragment {
 		renderer.setPanLimits(new double[] { -10, 20, -10, 40 });
 		renderer.setZoomLimits(new double[] { -10, 20, -10, 40 });
 		
-		XYSeries waterSeries = new XYSeries("Duration Amount");
-		waterSeries.add(1, 10);
-		waterSeries.add(2, 14);
-		waterSeries.add(3, 25);
-		waterSeries.add(4, 22);
-		waterSeries.add(5, 33);
-		waterSeries.add(6, 30);
-		waterSeries.add(7, 10);
+		XYSeries durationSeries = new XYSeries("Duration Amount");
+		for(int i=0;i<weeklyDataListSize;i++){
+			durationSeries.add(i+1, weeklyDataList.get(i).getDuration());
+		}
 		renderer.setBarSpacing(0.5);
 		
 		XYSeriesRenderer waterRenderer = new XYSeriesRenderer();
@@ -197,7 +201,7 @@ public class FragmentRestroomTabWeekly extends Fragment {
 		waterRenderer.setDisplayChartValues(true);
 		waterRenderer.setChartValuesTextSize(15);
 		
-		dataset.addSeries(0, waterSeries);
+		dataset.addSeries(0, durationSeries);
 		renderer.addSeriesRenderer(0, waterRenderer);
 		
 		String[] types = new String[] { BarChart.TYPE, LineChart.TYPE};

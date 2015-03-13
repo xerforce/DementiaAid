@@ -37,43 +37,43 @@ public class MainActivity extends Activity {
 	}
 	
 	public void doLoginClick(View v){
-		int id = v.getId();
-		switch(id){
-		case R.id.btnClose:
-			android.os.Process.killProcess(android.os.Process.myPid());
-			break;
-		case R.id.btnLogin:
-			EditText txtUsername = (EditText)findViewById(R.id.txtUsername);
-			EditText txtPassword = (EditText)findViewById(R.id.txtPassword);
-			
-			if(txtUsername.getText().toString().equals(User.TYPE_NURSE) &&
-					txtPassword.getText().toString().equals("1")){				
+//		int id = v.getId();
+//		switch(id){
+//		case R.id.btnClose:
+//			android.os.Process.killProcess(android.os.Process.myPid());
+//			break;
+//		case R.id.btnLogin:
+//			EditText txtUsername = (EditText)findViewById(R.id.txtUsername);
+//			EditText txtPassword = (EditText)findViewById(R.id.txtPassword);
+//			
+//			if(txtUsername.getText().toString().equals(User.TYPE_NURSE) &&
+//					txtPassword.getText().toString().equals("1")){				
 				Intent i = new Intent(this, Feature_1_A.class);
 				i.putExtra(User.TYPE, User.TYPE_NURSE);							
 				
 				finish(); //finish login activity
 				startActivity(i);		
-			}else if(txtUsername.getText().toString().equals(User.TYPE_MONITOR) &&
-					txtPassword.getText().toString().equals("1")){				
-				Intent i = new Intent(this, Feature_1_A.class);
-				i.putExtra(User.TYPE, User.TYPE_MONITOR);							
-				
-				finish(); //finish login activity
-				startActivity(i);				
-			}else if(txtUsername.getText().toString().equals(User.TYPE_PATIENT) &&
-					txtPassword.getText().toString().equals("1")){				
-				Intent i = new Intent(this, Feature_2.class);
-				i.putExtra(User.TYPE, User.TYPE_PATIENT);							
-				
-				finish(); //finish login activity
-				startActivity(i);				
-			}
-			else{
-				Toast.makeText(this, "Username or password is incorrect!",
-						Toast.LENGTH_LONG).show();
-				txtUsername.requestFocus();
-			}
-		}
+//			}else if(txtUsername.getText().toString().equals(User.TYPE_MONITOR) &&
+//					txtPassword.getText().toString().equals("1")){				
+//				Intent i = new Intent(this, Feature_1_A.class);
+//				i.putExtra(User.TYPE, User.TYPE_MONITOR);							
+//				
+//				finish(); //finish login activity
+//				startActivity(i);				
+//			}else if(txtUsername.getText().toString().equals(User.TYPE_PATIENT) &&
+//					txtPassword.getText().toString().equals("1")){				
+//				Intent i = new Intent(this, Feature_2.class);
+//				i.putExtra(User.TYPE, User.TYPE_PATIENT);							
+//				
+//				finish(); //finish login activity
+//				startActivity(i);				
+//			}
+//			else{
+//				Toast.makeText(this, "Username or password is incorrect!",
+//						Toast.LENGTH_LONG).show();
+//				txtUsername.requestFocus();
+//			}
+//		}
 	}
 	
 	/*

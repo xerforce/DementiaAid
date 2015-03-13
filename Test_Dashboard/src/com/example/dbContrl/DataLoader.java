@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import com.example.models.Monitoring_Daily;
 import com.example.mydashboard.Define;
+import com.example.mydashboard.IDrawGraph;
 import com.example.mydashboard.JSONParser;
 import com.example.mydashboard.R;
 import com.example.mydashboard.RetryFragment;
@@ -36,15 +37,18 @@ public class DataLoader extends AsyncTask<String, String, String> {
 	ProgressDialog mDialog;
 	boolean isException;
 	JSONObject jsonQuaryResult;
+	
+	public IDrawGraph drawGraphInterface;
 
 	public DataLoader() {
 		isException = false;
 	}
 
-	public DataLoader(Activity contentActivity, FragmentManager myFragmentManager) {
+	public DataLoader(Activity contentActivity, FragmentManager myFragmentManager, IDrawGraph drawGraphInterface) {
 		this.contentActivity = contentActivity;
 		this.myFragmentManager=myFragmentManager;
 		isException = false;
+		this.drawGraphInterface=drawGraphInterface;
 	}
 
 	/**
@@ -130,7 +134,7 @@ public class DataLoader extends AsyncTask<String, String, String> {
 		}
 
 		// draw graph
-//		drawGraph();
+		this.drawGraphInterface.drawGraph(jsonQuaryResult);  //call back the drawGraph function of caller
 	}
 	
 	private void showErrorDialogFragment(String msg) {

@@ -10,13 +10,13 @@ public class Monitoring_Weekly {
 	private int duration;
 	
 	public Monitoring_Weekly(){
-		
+		this(0, 0, 0, 0, 0);
 	}
 	
 	public Monitoring_Weekly(int patient_id, int location_id,
 			int date_weekday, int place_frequency, int duration) {
 		super();
-//		this.idx = idx;
+		this.idx = idx;
 		this.patient_id = patient_id;
 		this.location_id = location_id;
 		this.date_weekday = date_weekday;
